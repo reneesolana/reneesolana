@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Renee Solana Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Renee Solana, freelance graphic designer. Branding, packaging and websites for heart-centered businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<style>
+/* Layout: ruled Swiss grid on warm paper; pink hero band, black method band; bracketed mono labels carry the metadata */
+:root{
+  --paper:#f1f0ec; --stone:#dddad4; --ink:#141312; --muted:#6a6662; --pink:#f6c6d8; --white:#fbfaf8;
+  --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --serif:"Instrument Serif",Georgia,serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;font-variation-settings:"wdth" 100}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--pink)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+img{max-width:100%;height:auto;display:block}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.5}
+.br::before{content:"[ "}.br::after{content:" ]"}
+.amp{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1.5px solid currentColor;border-radius:999px;padding:10px 20px;font-size:.84rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.pill:hover{background:var(--ink);color:var(--paper)}
+.dark .pill:hover{background:var(--pink);color:var(--ink);border-color:var(--pink)}
+
+/* masthead */
+header.mast{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--pink);border-bottom:1px solid transparent;transition:border-color .2s}
+header.mast.scrolled{border-bottom-color:var(--ink)}
+.mast .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding-block:14px}
+.mast .mark{font-weight:800;font-size:1.05rem;letter-spacing:-.03em;text-decoration:none;justify-self:start}
+.mast .role{justify-self:center}
+.mast nav{display:flex;gap:20px;justify-self:end;align-items:center}
+.mast nav a{font-size:.9rem;text-decoration:none;padding-bottom:2px;border-bottom:1.5px solid transparent}
+.mast nav a:hover{border-bottom-color:var(--ink)}
+.hero .meta > :first-child{justify-self:start}.hero .meta > :nth-child(2){justify-self:center;text-align:center}.hero .meta > :last-child{justify-self:end;text-align:right}
+@media (max-width:640px){.hero .meta{grid-template-columns:minmax(0,1fr);gap:8px}.hero .meta > *{justify-self:start!important;text-align:left!important}}
+@media (max-width:820px){.mast .role{display:none}.mast .wrap{grid-template-columns:auto 1fr}}
+@media (max-width:440px){.mast nav{gap:12px}.mast nav a{font-size:.82rem}}
+
+/* hero */
+.hero{background:var(--pink)}
+.hero .wrap{padding-block:clamp(56px,9vw,128px) clamp(32px,4vw,48px)}
+.hero h1{font-weight:800;font-size:clamp(3.4rem,11.5vw,10.5rem);line-height:.9;letter-spacing:-.055em;margin:0;text-wrap:balance}
+.hero h1 .amp{font-size:1.02em;padding-right:.04em}
+.hero .row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-top:clamp(28px,4vw,48px)}
+.hero .sub{font-size:clamp(1.1rem,1.6vw,1.35rem);line-height:1.35;max-width:30ch;margin:0;letter-spacing:-.01em}
+.hero .meta{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;margin-top:clamp(40px,6vw,72px);padding-top:14px;border-top:1px solid var(--ink)}
+.strip{background:var(--white);border-bottom:1px solid var(--ink)}
+.strip p{margin:0;padding-block:18px;text-align:center;font-size:clamp(.95rem,1.4vw,1.1rem);letter-spacing:-.01em}
+
+/* section heads */
+.sec{padding-block:clamp(56px,8vw,112px)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,56px)}
+.sec-head h2{font-weight:800;font-size:clamp(3rem,8vw,6.6rem);line-height:.9;letter-spacing:-.05em;margin:0}
+.sec-head p{margin:12px 0 0;font-size:1.15rem;line-height:1.35;max-width:32ch}
+
+/* about split */
+.about{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);border-top:1px solid var(--ink)}
+.about .statement{padding:clamp(32px,4vw,56px) clamp(24px,4vw,56px) clamp(32px,4vw,56px) 0;border-right:1px solid var(--ink);min-width:0}
+.about .statement p.big{font-size:clamp(1.8rem,3.6vw,3.1rem);line-height:1.08;letter-spacing:-.035em;font-weight:500;margin:20px 0 0;max-width:20ch}
+.about .side{padding:clamp(32px,4vw,56px) 0 clamp(32px,4vw,56px) clamp(24px,4vw,56px);display:flex;flex-direction:column;gap:20px;min-width:0}
+.about .side img{aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;width:100%}
+.about .side p{margin:0;font-size:.98rem;max-width:44ch}
+@media (max-width:820px){.about{grid-template-columns:minmax(0,1fr)}.about .statement{border-right:0;border-bottom:1px solid var(--ink);padding-right:0}.about .side{padding-left:0}.about .side img{max-width:420px}}
+
+/* services */
+.services{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.services .label{padding-block:28px;padding-right:24px}
+.services .list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-left:1px solid var(--ink)}
+.services .item{padding:28px;border-bottom:1px solid var(--stone);min-width:0}
+.services .item:nth-child(odd){border-right:1px solid var(--stone)}
+.services .item:nth-last-child(-n+2){border-bottom:0}
+.services h3{font-weight:700;font-size:clamp(1.4rem,2.2vw,1.9rem);letter-spacing:-.03em;line-height:1.1;margin:0 0 10px}
+.services .item p{margin:0;color:var(--muted);font-size:.95rem;max-width:36ch}
+@media (max-width:820px){.services{grid-template-columns:minmax(0,1fr)}.services .list{border-left:0;border-top:1px solid var(--ink)}.services .label{padding-bottom:16px}}
+@media (max-width:560px){.services .list{grid-template-columns:minmax(0,1fr)}.services .item{padding-inline:0}.services .item:nth-child(odd){border-right:0}.services .item:nth-last-child(2){border-bottom:1px solid var(--stone)}}
+
+/* marquee */
+.marquee{overflow:hidden;border-bottom:1px solid var(--ink);padding-block:clamp(8px,1.4vw,18px)}
+.marquee .track{display:flex;width:max-content;animation:slide 38s linear infinite}
+.marquee span{font-weight:800;font-size:clamp(4rem,12vw,10rem);letter-spacing:-.055em;line-height:1;padding-right:.25em;white-space:nowrap}
+.marquee span:nth-child(even){font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-.02em}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+/* work cards */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,3vw,40px) clamp(20px,2.4vw,32px)}
+.card{text-decoration:none;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card .ph{aspect-ratio:16/10;overflow:hidden;background:var(--stone)}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.card:hover .ph img{transform:scale(1.03)}
+.card .t{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--ink);padding-top:10px}
+.card h3{margin:0;font-weight:600;font-size:clamp(1.15rem,1.7vw,1.4rem);letter-spacing:-.02em;line-height:1.2}
+.card .go{font-size:.82rem;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+@media (max-width:620px){.cards{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.card .ph img{transition:none}}
+
+/* projects */
+.project{border-top:1px solid var(--ink);padding-block:clamp(48px,6vw,88px);scroll-margin-top:60px}
+.project .metarow{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin-bottom:clamp(20px,3vw,36px)}
+.project .head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(24px,4vw,72px);align-items:start;margin-bottom:clamp(32px,4vw,56px)}
+.project h2{font-weight:800;font-size:clamp(2.6rem,6.4vw,5.6rem);line-height:.92;letter-spacing:-.05em;margin:0;text-wrap:balance}
+.project .copy{display:flex;flex-direction:column;gap:14px;min-width:0}
+.project .copy p{margin:0;max-width:52ch}
+.project .copy p:first-child{font-size:1.2rem;line-height:1.35;letter-spacing:-.01em}
+.project .copy .pill{align-self:flex-start;margin-top:8px}
+@media (max-width:820px){.project .head{grid-template-columns:minmax(0,1fr)}}
+.gallery{display:flex;flex-direction:column;gap:clamp(20px,2.4vw,32px)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px);align-items:start}
+figure{margin:0;min-width:0}
+figure img{width:100%;background:var(--stone)}
+figcaption{margin-top:10px;font-size:.86rem;line-height:1.45;color:var(--muted);max-width:68ch}
+figure.narrow{max-width:720px}
+@media (max-width:560px){.pair{grid-template-columns:minmax(0,1fr)}}
+.video{position:relative;aspect-ratio:16/9;max-width:100%;background:var(--ink)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vlink{position:relative;display:block;text-decoration:none;background:var(--ink)}
+.vlink img{width:100%;aspect-ratio:16/9;object-fit:cover;opacity:.78;transition:opacity .2s}
+.vlink:hover img{opacity:.6}
+.vlink .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--paper);color:var(--ink);border-color:var(--paper)}
+
+/* art */
+.artgrid{columns:4 240px;column-gap:16px}
+.artgrid figure{break-inside:avoid;margin-bottom:16px}
+
+/* method */
+.dark{background:var(--ink);color:var(--paper)}
+.dark .sec-head h2{color:var(--pink)}
+.method details{border-top:1px solid #4a4744}
+.method details:last-child{border-bottom:1px solid #4a4744}
+.method summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;font-size:clamp(1.05rem,1.6vw,1.3rem);letter-spacing:-.01em}
+.method summary::-webkit-details-marker{display:none}
+.method summary::after{content:"";width:18px;height:18px;flex:none;background:linear-gradient(currentColor,currentColor) center/100% 1.5px no-repeat,linear-gradient(currentColor,currentColor) center/1.5px 100% no-repeat;transition:transform .25s}
+.method details[open] summary::after{transform:rotate(45deg)}
+.method details p{margin:0 0 22px;max-width:60ch;color:#bdb8b2}
+
+/* contact */
+.contact{background:var(--pink)}
+.contact h2{font-weight:800;font-size:clamp(3.2rem,10vw,9rem);line-height:.88;letter-spacing:-.055em;margin:0 0 clamp(32px,5vw,56px)}
+.contact .rows{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;border-top:1px solid var(--ink);padding-top:18px}
+.contact .rows > div{display:flex;flex-direction:column;gap:6px;min-width:0;overflow-wrap:anywhere}
+.contact .rows a,.contact .rows span{font-size:1.02rem}
+.contact .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:clamp(48px,7vw,96px)}
+@media (max-width:820px){.contact .rows{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:440px){.contact .rows{grid-template-columns:minmax(0,1fr)}}
+
+.phero{background:var(--pink)}
+.phero .wrap{padding-block:clamp(40px,6vw,88px) clamp(32px,4vw,56px)}
+.phero .back{display:inline-block;margin-bottom:clamp(28px,4vw,48px);text-decoration:none}
+.phero .back:hover{text-decoration:underline;text-underline-offset:3px}
+.phero h1{font-weight:800;font-size:clamp(3rem,9vw,8rem);line-height:.9;letter-spacing:-.055em;margin:0 0 clamp(28px,4vw,48px);text-wrap:balance}
+.phero .head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,4vw,72px);border-top:1px solid var(--ink);padding-top:18px}
+.phero .facts{display:flex;flex-direction:column;align-self:start}
+.fact{display:grid;grid-template-columns:90px minmax(0,1fr);gap:12px;padding-block:10px;border-bottom:1px solid rgba(20,19,18,.25);font-size:.92rem;line-height:1.4}
+.fact:first-child{padding-top:0}
+.fact .mono{padding-top:2px}
+.phero .copy{display:flex;flex-direction:column;gap:14px;min-width:0}
+.phero .copy p{margin:0;max-width:62ch}
+.phero .copy p:first-child{font-size:1.2rem;line-height:1.35;letter-spacing:-.01em}
+.phero .copy .pill{align-self:flex-start;margin-top:8px}
+@media (max-width:820px){.phero .head{grid-template-columns:minmax(0,1fr)}}
+.phero .copy.story{gap:24px}
+.phero .headline{font-weight:700;font-size:clamp(1.7rem,3.2vw,2.7rem)!important;line-height:1.05!important;letter-spacing:-.04em!important;margin:0;max-width:18ch!important;text-wrap:balance}
+.beats{display:flex;flex-direction:column}
+.beat{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;border-top:1px solid var(--ink);padding-block:12px;min-width:0}
+.beat .mono{padding-top:3px}
+.beat p{margin:0;font-size:.97rem;line-height:1.5}
+@media (max-width:560px){.beat{grid-template-columns:minmax(0,1fr);gap:6px}}
+.pbody{padding-block:clamp(40px,6vw,80px)}
+.pnav{border-top:1px solid var(--ink);display:grid;grid-template-columns:1fr 1fr}
+.pnav a{display:flex;flex-direction:column;gap:8px;padding-block:28px;text-decoration:none;min-width:0}
+.pnav a + a{border-left:1px solid var(--ink);padding-left:clamp(16px,3vw,40px);text-align:right;align-items:flex-end}
+.pnav .t{font-weight:800;font-size:clamp(1.5rem,3.6vw,3rem);letter-spacing:-.045em;line-height:1}
+.pnav a:hover .t{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+</style>
+</head><body>
+<header class="mast" id="mast"><div class="wrap">
+<a class="mark" href="#top">Renee Solana.</a>
+<span class="role mono br">Brand Designer</span>
+<nav aria-label="Sections"><a href="#work">work</a><a href="#about">about</a><a href="art.html">art</a><a href="#contact">contact</a></nav>
+</div></header>
+<main id="top">
+<section class="hero"><div class="wrap">
+<h1>Heart-centered design <span class="amp">&amp;</span> branding.</h1>
+<div class="row"><p class="sub">Branding, packaging and websites for holistic practitioners, plant-based brands and conscious non-profits.</p>
+<a class="pill" href="#contact">Book a consult</a></div>
+<div class="meta"><span class="mono br">Renee Solana</span><span class="mono br">Freelance graphic designer</span><span class="mono br">Lisle, IL · Chicago area</span></div>
+</div></section>
+<div class="strip"><div class="wrap"><p>Identity. Packaging. Websites. Presentations. Motion. Print, too.</p></div></div>
+<section class="wrap sec" id="about" style="padding-bottom:0">
+<div class="about">
+<div class="statement"><span class="mono">(About me)</span>
+<p class="big">I make heart-centered brands unforgettable through visual storytelling.</p></div>
+<div class="side"><img src="img-site-about.webp" width="925" height="1165" alt="Portrait of Renee Solana" loading="lazy">
+<p>I’m Renee, a brand designer in the Chicago area. My clients heal people, feed people or fight for people: naturopaths, apothecaries, vegan restaurants and mindfulness programs. I dig into your story until I find the one detail only you have, then build your brand around it.</p></div>
+</div>
+<div class="services"><div class="label"><span class="mono">(What I do) ↘</span></div><div class="list"><div class="item"><h3>Brand Identity</h3><p>Logos, visual language and brand books, often hand-drawn first and built to grow with you.</p></div><div class="item"><h3>Packaging</h3><p>Labels, boxes and bottles designed around the person who will hold them.</p></div><div class="item"><h3>Web Design</h3><p>Websites that carry your story and your aesthetic.</p></div><div class="item"><h3>Presentation + Motion</h3><p>Slide decks, title sequences and animation with handmade texture.</p></div></div></div>
+</section>
+<div class="marquee" aria-hidden="true"><div class="track"><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span><span>Work</span></div></div>
+<section class="wrap sec" id="work">
+<div class="sec-head"><div><h2>The Work.</h2><p>Projects in branding, packaging, web, UX and motion.</p></div></div>
+<div class="cards"><a class="card" href="wildflower-kombucha.html"><div class="ph"><img src="img-wildflower-kombucha-hero.webp" width="1448" height="1086" alt="Wildflower Kombucha" loading="lazy"></div><div class="t"><h3>Wildflower Kombucha</h3><span class="go">See project →</span></div><span class="mono br">Packaging</span></a>
+<a class="card" href="amitabul.html"><div class="ph"><img src="img-amitabul-hero.webp" width="1536" height="1024" alt="Amitabul Restaurant Identity" loading="lazy"></div><div class="t"><h3>Amitabul Restaurant Identity</h3><span class="go">See project →</span></div><span class="mono br">Identity Design</span></a>
+<a class="card" href="bloom.html"><div class="ph"><img src="img-bloom-04.webp" width="1536" height="1024" alt="Bloom" loading="lazy"></div><div class="t"><h3>Bloom</h3><span class="go">See project →</span></div><span class="mono br">UX Research</span></a>
+<a class="card" href="ayurvedic-packaging.html"><div class="ph"><img src="img-ayurvedic-packaging-hero.webp" width="1536" height="1024" alt="Ayurvedic Packaging" loading="lazy"></div><div class="t"><h3>Ayurvedic Packaging</h3><span class="go">See project →</span></div><span class="mono br">Packaging</span></a>
+<a class="card" href="dr-damon-fazio.html"><div class="ph"><img src="img-dr-damon-fazio-cards-styled.webp" width="2500" height="1667" alt="Dr. Damon Fazio" loading="lazy"></div><div class="t"><h3>Dr. Damon Fazio</h3><span class="go">See project →</span></div><span class="mono br">Identity Design</span></a>
+<a class="card" href="prisoners-apothecary.html"><div class="ph"><img src="img-prisoners-apothecary-00.webp" width="1200" height="676" alt="The Prisoner’s Apothecary" loading="lazy"></div><div class="t"><h3>The Prisoner’s Apothecary</h3><span class="go">See project →</span></div><span class="mono br">Identity Design</span></a>
+<a class="card" href="conscious-living.html"><div class="ph"><img src="img-conscious-living-00.webp" width="526" height="342" alt="Conscious Living Programs" loading="lazy"></div><div class="t"><h3>Conscious Living Programs</h3><span class="go">See project →</span></div><span class="mono br">Presentation Design</span></a>
+<a class="card" href="frida-kahlo.html"><div class="ph"><img src="img-frida-kahlo-06.webp" width="1440" height="810" alt="Frida Kahlo Art Exhibit" loading="lazy"></div><div class="t"><h3>Frida Kahlo Art Exhibit</h3><span class="go">See project →</span></div><span class="mono br">Motion Graphics</span></a></div>
+</section>
+<section class="dark"><div class="wrap sec method">
+<div class="sec-head"><div><h2>The Method.</h2><p>Bespoke design for businesses that heal people and the planet.</p></div><a class="pill" href="#contact">Book a consult</a></div>
+<details><summary>Research first.</summary><p>Every project starts with a real conversation and a mood board. I dig into your story, your audience and your category before I draw anything.</p></details><details><summary>Values-led.</summary><p>I design for people out to serve the greater good: holistic health practitioners, plant-based businesses and conscious non-profits.</p></details><details><summary>Collaborative.</summary><p>You see the work early and often. Outside perspectives keep it honest, representative and free of blind spots.</p></details>
+</div></section>
+</main>
+<footer class="contact" id="contact"><div class="wrap sec">
+<h2>Let’s work together.</h2>
+<div class="rows">
+<div><span class="mono">(Email)</span><a href="mailto:reneesolanadesign@gmail.com">reneesolanadesign@gmail.com</a></div>
+<div><span class="mono">(Phone)</span><span>(630) 854-3616</span></div>
+<div><span class="mono">(Based in)</span><span>Lisle, IL 60532</span></div>
+<div><span class="mono">(Elsewhere)</span><a href="http://www.pinterest.com/reneetranterdesign" target="_blank" rel="noopener">Pinterest ↗</a><a href="https://x.com/ReneeSolana" target="_blank" rel="noopener">X/Twitter ↗</a></div>
+</div>
+<div class="foot"><span class="mono br">© 2026 Renee Solana</span><a class="mono" href="#top">Back to top ↑</a></div>
+</div></footer>
+<script>(function(){try{if("scrollRestoration" in history)history.scrollRestoration="manual"}catch(e){}if(!location.hash){var top=function(){var h=document.documentElement,b=h.style.scrollBehavior;h.style.scrollBehavior="auto";window.scrollTo(0,0);h.style.scrollBehavior=b};top();window.addEventListener("pageshow",top);window.addEventListener("load",top)}})();(function(){var m=document.getElementById("mast");function f(){m.classList.toggle("scrolled",window.scrollY>8)}window.addEventListener("scroll",f,{passive:true});f();})();</script>
+</body></html>
