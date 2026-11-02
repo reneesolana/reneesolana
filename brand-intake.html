@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brand Intake — Renee Solana</title>
+<meta name="description" content="Brand intake questionnaire for Renee Solana clients.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@1&display=swap">
+<style>
+/* Same system as the rest of the site: ruled Swiss grid on warm paper, pink bands, bracketed mono labels */
+:root{
+  --paper:#f1f0ec; --stone:#dddad4; --ink:#141312; --muted:#6a6662; --pink:#f6c6d8; --white:#fbfaf8;
+  --sans:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --serif:"Instrument Serif",Georgia,serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;font-variation-settings:"wdth" 100}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--pink)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:1360px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.mono{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;line-height:1.5}
+.br::before{content:"[ "}.br::after{content:" ]"}
+.amp{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.pill{display:inline-flex;align-items:center;gap:8px;border:1.5px solid currentColor;border-radius:999px;padding:10px 20px;font-size:.84rem;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s;font-family:inherit;color:inherit;background:transparent;cursor:pointer}
+.pill:hover{background:var(--ink);color:var(--paper)}
+
+/* masthead */
+header.mast{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--pink);border-bottom:1px solid transparent;transition:border-color .2s}
+header.mast.scrolled{border-bottom-color:var(--ink)}
+.mast .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;padding-block:14px}
+.mast .mark{font-weight:800;font-size:1.05rem;letter-spacing:-.03em;text-decoration:none;justify-self:start}
+.mast .role{justify-self:center}
+.mast .prog{justify-self:end}
+@media (max-width:820px){.mast .role{display:none}.mast .wrap{grid-template-columns:auto 1fr}}
+
+/* page hero */
+.phero{background:var(--pink)}
+.phero .wrap{padding-block:clamp(40px,6vw,88px) clamp(32px,4vw,56px)}
+.phero .back{display:inline-block;margin-bottom:clamp(28px,4vw,48px);text-decoration:none}
+.phero .back:hover{text-decoration:underline;text-underline-offset:3px}
+.phero h1{font-weight:800;font-size:clamp(3rem,9vw,8rem);line-height:.9;letter-spacing:-.055em;margin:0 0 clamp(28px,4vw,48px);text-wrap:balance}
+.phero .head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,4vw,72px);border-top:1px solid var(--ink);padding-top:18px}
+.phero .copy p{margin:0 0 14px;max-width:58ch}
+.phero .copy p:first-child{font-size:1.2rem;line-height:1.35;letter-spacing:-.01em}
+.facts{display:flex;flex-direction:column;align-self:start}
+.fact{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;padding-block:10px;border-bottom:1px solid rgba(20,19,18,.25);font-size:.92rem;line-height:1.4}
+.fact:first-child{padding-top:0}
+.fact .mono{padding-top:2px}
+@media (max-width:820px){.phero .head{grid-template-columns:minmax(0,1fr)}}
+
+/* sections + questions */
+.part{padding-block:clamp(40px,6vw,80px) 0}
+.part-head{display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(16px,2.4vw,28px)}
+.part-head h2{font-weight:800;font-size:clamp(2.2rem,5.4vw,4.4rem);line-height:.92;letter-spacing:-.05em;margin:0}
+.q{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:14px clamp(24px,4vw,72px);border-top:1px solid var(--ink);padding-block:24px 28px}
+.q:last-child{border-bottom:1px solid var(--ink)}
+.qlabel{display:flex;flex-direction:column;gap:6px;min-width:0}
+.qtext{margin:0;font-size:clamp(1.05rem,1.5vw,1.25rem);line-height:1.3;letter-spacing:-.015em;font-weight:500;max-width:34ch}
+.hint{margin:0;color:var(--muted);font-size:.9rem;line-height:1.45;max-width:44ch}
+.qans{display:flex;flex-direction:column;gap:12px;min-width:0}
+@media (max-width:760px){.q{grid-template-columns:minmax(0,1fr)}}
+
+/* fields */
+.fld{display:flex;flex-direction:column;gap:6px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 20px}
+@media (max-width:560px){.grid2{grid-template-columns:minmax(0,1fr)}}
+input[type=text],input[type=email],input[type=url],textarea{font:inherit;font-size:1rem;color:var(--ink);background:transparent;border:1.5px solid var(--ink);border-radius:0;padding:12px 14px;width:100%;-webkit-appearance:none;appearance:none}
+textarea{resize:vertical;min-height:120px;line-height:1.5}
+textarea.short{min-height:76px}
+input:focus,textarea:focus{outline:2px solid var(--ink);outline-offset:2px}
+.req{color:var(--muted)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;display:inline-flex}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip span{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--ink);border-radius:999px;padding:8px 15px;font-size:.92rem;line-height:1.2;cursor:pointer;user-select:none;transition:background .15s,color .15s}
+.chip span:hover{background:var(--pink)}
+.chip input:checked + span{background:var(--ink);color:var(--paper)}
+.chip input:focus-visible + span{outline:2px solid var(--ink);outline-offset:3px}
+.chip span[data-rank]::before{content:attr(data-rank);display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--pink);color:var(--ink);font-family:var(--mono);font-size:.72rem;font-weight:500}
+.addrow{display:flex;gap:8px;max-width:420px}
+.addrow input{padding:9px 12px;font-size:.92rem}
+.addrow button{padding:8px 16px}
+.limit{margin:0;min-height:1.2em;font-size:.82rem;color:var(--muted)}
+
+/* 1–6 scales */
+.scales{display:flex;flex-direction:column;border-top:1px solid var(--stone)}
+.scale{border:0;margin:0;padding:12px 0;border-bottom:1px solid var(--stone);display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:16px;min-width:0}
+.scale .l{text-align:right;font-size:.95rem;line-height:1.25}
+.scale .r{font-size:.95rem;line-height:1.25}
+.dots{display:flex}
+.dot{position:relative;display:inline-flex}
+.dot input{position:absolute;opacity:0;width:1px;height:1px}
+.dot span{display:grid;place-items:center;width:38px;height:38px;border:1.5px solid var(--ink);font-family:var(--mono);font-size:.72rem;color:var(--muted);cursor:pointer;transition:background .15s,color .15s}
+.dot + .dot span{border-left:0}
+.dot span:hover{background:var(--pink);color:var(--ink)}
+.dot input:checked + span{background:var(--ink);color:var(--paper)}
+.dot input:focus-visible + span{outline:2px solid var(--ink);outline-offset:2px;position:relative;z-index:1}
+@media (max-width:560px){
+  .scale{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"l r" "d d";gap:10px 12px}
+  .scale .l{grid-area:l;text-align:left}.scale .r{grid-area:r;text-align:right}
+  .dots{grid-area:d}.dot{flex:1}.dot span{width:100%}
+}
+
+/* "this, but not that" rows */
+.butnot{display:flex;flex-direction:column;gap:10px}
+.bn{display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);align-items:center;gap:12px}
+.bn .w{font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.bn .w.empty{font-weight:400;color:var(--muted)}
+
+/* submit */
+.sendbar{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-block:clamp(32px,5vw,56px) clamp(56px,8vw,112px)}
+.send{background:var(--ink);color:var(--pink);border-color:var(--ink);font-size:.95rem;padding:14px 26px}
+.send:hover{background:transparent;color:var(--ink)}
+.send[disabled]{opacity:.55;cursor:wait}
+.note{margin:0;text-transform:none;letter-spacing:.02em;max-width:60ch}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* done */
+.done{background:var(--pink)}
+.done .wrap{padding-block:clamp(80px,12vw,160px)}
+.done h2{font-weight:800;font-size:clamp(3rem,9vw,7rem);line-height:.92;letter-spacing:-.055em;margin:0 0 24px}
+.done p{font-size:1.2rem;max-width:44ch;margin:0 0 28px}
+[hidden]{display:none!important}
+</style>
+</head><body>
+<header class="mast" id="mast"><div class="wrap">
+<a class="mark" href="index.html">Renee Solana.</a>
+<span class="role mono br">Brand Intake</span>
+<span class="prog mono" id="prog" aria-live="polite">0 of 18 answered</span>
+</div></header>
+
+<main id="top">
+<section class="phero" id="intro"><div class="wrap">
+<a class="back mono" href="index.html">← Back to reneesolana.com</a>
+<h1>Let’s get to know your brand<span class="amp">.</span></h1>
+<div class="head">
+<div class="copy">
+<p>Thank you for trusting me with your brand. These questions help me understand your work, your people and where you want to go before we meet.</p>
+<p>Short, honest answers beat polished ones, and “not sure” is a useful answer. We’ll go through everything together on our call, so nothing here is final.</p>
+</div>
+<div class="facts">
+<div class="fact"><span class="mono">(Time)</span><span>About 20 minutes</span></div>
+<div class="fact"><span class="mono">(Questions)</span><span>18, in nine short sections</span></div>
+<div class="fact"><span class="mono">(Saving)</span><span>Your answers save on this device as you go</span></div>
+<div class="fact"><span class="mono">(Next)</span><span>I read everything closely before our call</span></div>
+</div>
+</div>
+</div></section>
+
+<form class="wrap" id="intake" novalidate>
+<input type="text" name="website_url" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+<section class="part" aria-labelledby="p1"><div class="part-head"><span class="mono">(01)</span><h2 id="p1">About you</h2></div>
+<div class="q" data-n="1" data-type="contact" data-section="About you">
+<div class="qlabel"><span class="mono">Q01</span><p class="qtext" id="t1">Your name, email, business name, and website or social links.</p></div>
+<div class="qans grid2">
+<div class="fld"><label class="mono" for="name">(Name) <span class="req">required</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
+<div class="fld"><label class="mono" for="email">(Email) <span class="req">required</span></label><input id="email" name="email" type="email" autocomplete="email" required></div>
+<div class="fld"><label class="mono" for="business">(Business name)</label><input id="business" name="business" type="text" autocomplete="organization"></div>
+<div class="fld"><label class="mono" for="links">(Website or socials)</label><input id="links" name="links" type="text" placeholder="yoursite.com, @handle"></div>
+</div></div>
+<div class="q" data-n="2" data-type="text" data-section="About you">
+<div class="qlabel"><span class="mono">Q02</span><label class="qtext" for="q02">What do you offer, and who do you help?</label></div>
+<div class="qans"><textarea id="q02" name="q02"></textarea></div></div>
+</section>
+
+<section class="part" aria-labelledby="p2"><div class="part-head"><span class="mono">(02)</span><h2 id="p2">Goals</h2></div>
+<div class="q" data-n="3" data-type="text" data-section="Goals">
+<div class="qlabel"><span class="mono">Q03</span><label class="qtext" for="q03">Picture 6–12 months from now. What has to change in your business for this project to have been worth it?</label></div>
+<div class="qans"><textarea id="q03" name="q03"></textarea></div></div>
+<div class="q" data-n="4" data-type="multi" data-section="Goals">
+<div class="qlabel"><span class="mono">Q04</span><p class="qtext" id="t4">Which signs would tell you it worked?</p><p class="hint">Choose up to 3.</p></div>
+<div class="qans"><div class="chips" role="group" aria-labelledby="t4" data-group="q04" data-max="3" data-options="More inquiries|Better-fit clients|More people finding me without a referral|Feeling able to raise my prices|Feeling proud to share my brand"></div>
+<div class="addrow" data-for="q04"><input type="text" aria-label="Add your own sign" placeholder="Something else?"><button type="button" class="pill">Add</button></div><p class="limit" aria-live="polite"></p></div></div>
+<div class="q" data-n="5" data-type="text" data-section="Goals">
+<div class="qlabel"><span class="mono">Q05</span><label class="qtext" for="q05">If this project went badly, what would the result look or feel like?</label><p class="hint">For example: “too corporate,” “looks like everyone else,” “not me.”</p></div>
+<div class="qans"><textarea id="q05" name="q05" class="short"></textarea></div></div>
+</section>
+
+<section class="part" aria-labelledby="p3"><div class="part-head"><span class="mono">(03)</span><h2 id="p3">Where you are now</h2></div>
+<div class="q" data-n="6" data-type="single" data-section="Where you are now">
+<div class="qlabel"><span class="mono">Q06</span><p class="qtext" id="t6">About how many new inquiries do you get in a month?</p><p class="hint">An estimate is perfect.</p></div>
+<div class="qans"><div class="chips" role="radiogroup" aria-labelledby="t6" data-group="q06" data-single="true" data-options="0–2|3–5|6–10|11 or more|Not sure"></div></div></div>
+<div class="q" data-n="7" data-type="text" data-section="Where you are now">
+<div class="qlabel"><span class="mono">Q07</span><label class="qtext" for="q07">Where do most new clients come from?</label><p class="hint">Rough percentages are fine, e.g. “80% referrals, 20% Google.”</p></div>
+<div class="qans"><input id="q07" name="q07" type="text"></div></div>
+</section>
+
+<section class="part" aria-labelledby="p4"><div class="part-head"><span class="mono">(04)</span><h2 id="p4">Your brand today</h2></div>
+<div class="q" data-n="8" data-type="text" data-section="Your brand today">
+<div class="qlabel"><span class="mono">Q08</span><label class="qtext" for="q08">What do you want to keep, and what are you ready to change?</label><p class="hint">A color, a symbol, a name, a feeling. Links to your current logo or materials are welcome.</p></div>
+<div class="qans"><textarea id="q08" name="q08"></textarea></div></div>
+</section>
+
+<section class="part" aria-labelledby="p5"><div class="part-head"><span class="mono">(05)</span><h2 id="p5">What sets you apart</h2></div>
+<div class="q" data-n="9" data-type="text" data-section="What sets you apart">
+<div class="qlabel"><span class="mono">Q09</span><label class="qtext" for="q09">What makes your work different from others in your field, and what are you proudest of?</label></div>
+<div class="qans"><textarea id="q09" name="q09"></textarea></div></div>
+</section>
+
+<section class="part" aria-labelledby="p6"><div class="part-head"><span class="mono">(06)</span><h2 id="p6">Your people</h2></div>
+<div class="q" data-n="10" data-type="text" data-section="Your people">
+<div class="qlabel"><span class="mono">Q10</span><label class="qtext" for="q10">Describe your ideal client, and who isn’t a good fit.</label><p class="hint">What their life looks like, what they value, what they’re struggling with when they find you.</p></div>
+<div class="qans"><textarea id="q10" name="q10"></textarea></div></div>
+<div class="q" data-n="11" data-type="text" data-section="Your people">
+<div class="qlabel"><span class="mono">Q11</span><label class="qtext" for="q11">Paste 3–5 reviews or kind messages from clients.</label><p class="hint">Copy them from Google, email or texts. Screenshots can go in your project folder after our call.</p></div>
+<div class="qans"><textarea id="q11" name="q11"></textarea></div></div>
+</section>
+
+<section class="part" aria-labelledby="p7"><div class="part-head"><span class="mono">(07)</span><h2 id="p7">Personality</h2></div>
+<div class="q" data-n="12" data-type="sliders" data-section="Personality">
+<div class="qlabel"><span class="mono">Q12</span><p class="qtext" id="t12">For each pair, pick a number from 1 to 6.</p><p class="hint">There’s no middle on purpose. Lean whichever way feels truer, even slightly.</p></div>
+<div class="qans"><div class="scales" id="scales" data-pairs="Serious:Playful|Time-tested:Innovative|Expert authority:Friendly peer|Calm, quiet:Bold, energetic|Earthy, handmade:Polished, refined|Premium:Accessible|Grounded, practical:Spiritual, mystical"></div></div></div>
+<div class="q" data-n="13" data-type="ranked" data-section="Personality">
+<div class="qlabel"><span class="mono">Q13</span><p class="qtext" id="t13">Pick your top 3 words, most important first.</p><p class="hint">Tap them in order. Tap again to remove one.</p></div>
+<div class="qans"><div class="chips" role="group" aria-labelledby="t13" data-group="q13" data-max="3" data-ranked="true" data-options="Approachable|Artistic|Casual|Conscious|Conservative|Daring|Deep|Elegant|Feminine|Fun|Gentle|Humble|Inspiring|Masculine|Original|Playful|Polished|Powerful|Practical|Precise|Progressive|Quiet|Refined|Serious|Spontaneous|Sweet|Thoughtful|Wise"></div>
+<div class="addrow" data-for="q13"><input type="text" aria-label="Add your own word" placeholder="Your own word?"><button type="button" class="pill">Add</button></div><p class="limit" aria-live="polite"></p></div></div>
+<div class="q" data-n="14" data-type="butnot" data-section="Personality">
+<div class="qlabel"><span class="mono">Q14</span><p class="qtext" id="t14">For each of your 3 words, finish the sentence “___, but not ___.”</p><p class="hint">The second word is where that quality would go too far, e.g. “Warm, but not folksy.”</p></div>
+<div class="qans butnot" role="group" aria-labelledby="t14">
+<div class="bn"><span class="w empty" data-bn="0">Word 1, but not</span><input type="text" name="bn0" aria-label="But not, for word 1"></div>
+<div class="bn"><span class="w empty" data-bn="1">Word 2, but not</span><input type="text" name="bn1" aria-label="But not, for word 2"></div>
+<div class="bn"><span class="w empty" data-bn="2">Word 3, but not</span><input type="text" name="bn2" aria-label="But not, for word 3"></div>
+</div></div>
+</section>
+
+<section class="part" aria-labelledby="p8"><div class="part-head"><span class="mono">(08)</span><h2 id="p8">Look and feel</h2></div>
+<div class="q" data-n="15" data-type="pair" data-section="Look and feel">
+<div class="qlabel"><span class="mono">Q15</span><p class="qtext" id="t15">Name up to 3 brands you love and up to 3 you dislike, from any industry, with a few words on why.</p><p class="hint">Links are welcome.</p></div>
+<div class="qans"><div class="fld"><label class="mono" for="q15a">(Brands I love)</label><textarea id="q15a" name="q15a" class="short"></textarea></div>
+<div class="fld"><label class="mono" for="q15b">(Brands I dislike)</label><textarea id="q15b" name="q15b" class="short"></textarea></div></div></div>
+<div class="q" data-n="16" data-type="multi" data-section="Look and feel">
+<div class="qlabel"><span class="mono">Q16</span><p class="qtext" id="t16">Choose up to 5 words for the look you’re imagining.</p><p class="hint">This will probably shift as we work, and that’s okay.</p></div>
+<div class="qans"><div class="chips" role="group" aria-labelledby="t16" data-group="q16" data-max="5" data-options="Ancient|Bright|Clean|Colorful|Cool|Dark|Dramatic|Floral|Hand-drawn|Light|Minimal|Modern|Neutral|Organic|Ornate|Pastel|Professional|Relaxed|Retro|Scientific|Sleek|Spiritual|Traditional|Warm|Whimsical"></div>
+<div class="addrow" data-for="q16"><input type="text" aria-label="Add your own look word" placeholder="Your own word?"><button type="button" class="pill">Add</button></div><p class="limit" aria-live="polite"></p></div></div>
+</section>
+
+<section class="part" aria-labelledby="p9"><div class="part-head"><span class="mono">(09)</span><h2 id="p9">Final details</h2></div>
+<div class="q" data-n="17" data-type="text" data-section="Final details">
+<div class="qlabel"><span class="mono">Q17</span><label class="qtext" for="q17">Who else has a say in this project, and who makes the final decision?</label></div>
+<div class="qans"><input id="q17" name="q17" type="text"></div></div>
+<div class="q" data-n="18" data-type="text" data-section="Final details">
+<div class="qlabel"><span class="mono">Q18</span><label class="qtext" for="q18">Anything else I should know?</label><p class="hint">A deadline, must-haves, accessibility needs, anything on your mind.</p></div>
+<div class="qans"><textarea id="q18" name="q18" class="short"></textarea></div></div>
+</section>
+
+<div class="sendbar">
+<button class="pill send" type="submit" id="send">Send my answers →</button>
+<p class="note mono" id="note" role="status">Your answers save on this device as you go.</p>
+</div>
+</form>
+
+<section class="done" id="done" hidden><div class="wrap">
+<h2>Thank you<span class="amp">.</span></h2>
+<p>Your answers are in. I’ll read them closely before our call and bring my first thoughts with me.</p>
+<a class="pill" href="index.html">Back to reneesolana.com</a>
+</div></section>
+</main>
+
+<script>
+(function(){
+  /* Paste the Web app URL from Google Apps Script between the quotes. */
+  var INTAKE_ENDPOINT = "";
+
+  var KEY = "rs-brand-intake-v1";
+  var form = document.getElementById("intake");
+  var note = document.getElementById("note");
+  var send = document.getElementById("send");
+  var prog = document.getElementById("prog");
+  var order = {};   /* group -> selected values, in the order chosen */
+  var added = {};   /* group -> words the client added */
+  var state = {};
+  var ls = null;
+  try { ls = window.localStorage; ls.getItem(KEY); } catch (e) { ls = null; }
+
+  function el(tag, cls, text){ var n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; }
+  function uid(){ try { return crypto.randomUUID(); } catch (e) { return "s-" + Date.now() + "-" + Math.random().toString(36).slice(2); } }
+
+  /* ---------- build chips and scales ---------- */
+  function makeChip(box, value){
+    var group = box.dataset.group, single = box.dataset.single === "true";
+    var lab = el("label", "chip"), inp = el("input");
+    inp.type = single ? "radio" : "checkbox"; inp.name = group; inp.value = value;
+    var sp = el("span", null, value);
+    lab.appendChild(inp); lab.appendChild(sp); box.appendChild(lab);
+    return inp;
+  }
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".chips[data-group]"));
+  boxes.forEach(function(box){
+    order[box.dataset.group] = [];
+    box.dataset.options.split("|").forEach(function(v){ makeChip(box, v); });
+  });
+  var scales = document.getElementById("scales");
+  scales.dataset.pairs.split("|").forEach(function(pair, i){
+    var ends = pair.split(":");
+    var fs = el("fieldset", "scale");
+    var lg = el("legend", "sr", ends[0] + " (1) to " + ends[1] + " (6)");
+    fs.appendChild(lg);
+    fs.appendChild(el("span", "l", ends[0]));
+    var dots = el("span", "dots");
+    for (var k = 1; k <= 6; k++) {
+      var d = el("label", "dot"), inp = el("input");
+      inp.type = "radio"; inp.name = "s" + i; inp.value = String(k);
+      inp.setAttribute("aria-label", k + " of 6");
+      d.appendChild(inp); d.appendChild(el("span", null, String(k)));
+      dots.appendChild(d);
+    }
+    fs.appendChild(dots);
+    fs.appendChild(el("span", "r", ends[1]));
+    fs.dataset.left = ends[0]; fs.dataset.right = ends[1];
+    scales.appendChild(fs);
+  });
+
+  /* ---------- chip behaviour: limits, ranking, adding ---------- */
+  function limitMsg(box, text){
+    var p = box.parentNode.querySelector(".limit"); if (!p) return;
+    p.textContent = text || "";
+    if (text) setTimeout(function(){ if (p.textContent === text) p.textContent = ""; }, 2600);
+  }
+  function paintRanks(group){
+    var box = document.querySelector('.chips[data-group="' + group + '"]');
+    if (!box || box.dataset.ranked !== "true") return;
+    Array.prototype.forEach.call(box.querySelectorAll(".chip"), function(lab){
+      var i = order[group].indexOf(lab.querySelector("input").value);
+      var sp = lab.querySelector("span");
+      if (i >= 0) { lab.setAttribute("data-rank", String(i + 1)); sp.setAttribute("data-rank", String(i + 1)); }
+      else { lab.removeAttribute("data-rank"); sp.removeAttribute("data-rank"); }
+    });
+    if (group === "q13") paintButNot();
+  }
+  function paintButNot(){
+    for (var i = 0; i < 3; i++) {
+      var w = order.q13[i], span = document.querySelector('[data-bn="' + i + '"]');
+      span.textContent = (w ? w : "Word " + (i + 1)) + ", but not";
+      span.classList.toggle("empty", !w);
+    }
+  }
+  boxes.forEach(function(box){
+    var group = box.dataset.group, max = +box.dataset.max || 0, single = box.dataset.single === "true";
+    box.addEventListener("change", function(e){
+      var inp = e.target; if (!inp || inp.name !== group) return;
+      if (single) { order[group] = inp.checked ? [inp.value] : []; return changed(); }
+      if (inp.checked) {
+        if (max && order[group].length >= max) { inp.checked = false; limitMsg(box, "Pick up to " + max + ". Tap one to remove it first."); return; }
+        order[group].push(inp.value);
+      } else {
+        order[group] = order[group].filter(function(v){ return v !== inp.value; });
+      }
+      paintRanks(group); changed();
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll(".addrow"), function(row){
+    var group = row.dataset.for, box = document.querySelector('.chips[data-group="' + group + '"]');
+    var input = row.querySelector("input"), btn = row.querySelector("button");
+    function add(){
+      var v = input.value.trim().replace(/\s+/g, " ").slice(0, 60); if (!v) return;
+      var exists = Array.prototype.some.call(box.querySelectorAll("input"), function(i){ return i.value.toLowerCase() === v.toLowerCase(); });
+      if (!exists) { makeChip(box, v); (added[group] = added[group] || []).push(v); }
+      var target = Array.prototype.filter.call(box.querySelectorAll("input"), function(i){ return i.value.toLowerCase() === v.toLowerCase(); })[0];
+      input.value = "";
+      if (target && !target.checked) { target.checked = true; target.dispatchEvent(new Event("change", {bubbles: true})); }
+      else changed();
+    }
+    btn.addEventListener("click", add);
+    input.addEventListener("keydown", function(e){ if (e.key === "Enter") { e.preventDefault(); add(); } });
+  });
+
+  /* ---------- collect answers ---------- */
+  function val(name){ var n = form.elements[name]; return n ? String(n.value || "").trim() : ""; }
+  function collect(){
+    var items = [];
+    Array.prototype.forEach.call(form.querySelectorAll(".q"), function(q){
+      var n = +q.dataset.n, type = q.dataset.type, t = q.querySelector(".qtext").textContent.trim(), v;
+      if (type === "contact") v = { name: val("name"), email: val("email"), business: val("business"), links: val("links") };
+      else if (type === "text") v = val("q" + String(n).padStart(2, "0"));
+      else if (type === "single") v = (order["q" + String(n).padStart(2, "0")] || [])[0] || "";
+      else if (type === "multi" || type === "ranked") v = (order["q" + String(n).padStart(2, "0")] || []).slice();
+      else if (type === "sliders") v = Array.prototype.map.call(scales.querySelectorAll(".scale"), function(fs, i){
+        var c = fs.querySelector("input:checked"); return { left: fs.dataset.left, right: fs.dataset.right, value: c ? +c.value : null };
+      });
+      else if (type === "butnot") v = [0, 1, 2].map(function(i){ return { word: order.q13[i] || "", not: val("bn" + i) }; }).filter(function(x){ return x.word || x.not; });
+      else if (type === "pair") v = { love: val("q15a"), dislike: val("q15b") };
+      items.push({ n: n, section: q.dataset.section, question: t, type: type, value: v });
+    });
+    return items;
+  }
+  function answered(it){
+    var v = it.value;
+    if (it.type === "contact") return !!(v.name && v.email);
+    if (it.type === "sliders") return v.some(function(s){ return s.value; });
+    if (it.type === "butnot") return v.some(function(x){ return x.not; });
+    if (it.type === "pair") return !!(v.love || v.dislike);
+    if (Array.isArray(v)) return v.length > 0;
+    return !!v;
+  }
+
+  /* ---------- autosave ---------- */
+  var sent = false;
+  function save(){
+    if (!ls || sent) return;
+    var fields = {};
+    Array.prototype.forEach.call(form.querySelectorAll("input[type=text]:not(.hp),input[type=email],textarea"), function(i){ if (i.name) fields[i.name] = i.value; });
+    var radios = {};
+    Array.prototype.forEach.call(scales.querySelectorAll("input:checked"), function(i){ radios[i.name] = i.value; });
+    try { ls.setItem(KEY, JSON.stringify({ v: 1, id: state.id, startedAt: state.startedAt, fields: fields, radios: radios, order: order, added: added })); } catch (e) {}
+  }
+  function restore(){
+    var s = null;
+    if (ls) { try { s = JSON.parse(ls.getItem(KEY) || "null"); } catch (e) { s = null; } }
+    state.id = (s && s.id) || uid();
+    state.startedAt = (s && s.startedAt) || null;
+    if (!s) return;
+    Object.keys(s.added || {}).forEach(function(g){
+      var box = document.querySelector('.chips[data-group="' + g + '"]'); if (!box) return;
+      added[g] = (s.added[g] || []).slice(0, 12);
+      added[g].forEach(function(v){ makeChip(box, v); });
+    });
+    Object.keys(s.fields || {}).forEach(function(k){ var n = form.elements[k]; if (n && "value" in n) n.value = s.fields[k]; });
+    Object.keys(s.radios || {}).forEach(function(k){ var r = scales.querySelector('input[name="' + k + '"][value="' + s.radios[k] + '"]'); if (r) r.checked = true; });
+    Object.keys(s.order || {}).forEach(function(g){
+      if (!order[g]) return;
+      (s.order[g] || []).forEach(function(v){
+        var i = Array.prototype.filter.call(form.querySelectorAll('input[name="' + g + '"]'), function(x){ return x.value === v; })[0];
+        if (i) { i.checked = true; order[g].push(v); }
+      });
+      paintRanks(g);
+    });
+    paintButNot();
+  }
+  var t = null;
+  function changed(fromUser){
+    if (fromUser !== false && !state.startedAt) state.startedAt = Date.now();
+    var items = collect(), done = items.filter(answered).length;
+    prog.textContent = done + " of " + items.length + " answered";
+    clearTimeout(t); t = setTimeout(save, 350);
+  }
+  form.addEventListener("input", changed);
+  form.addEventListener("change", function(e){ if (e.target && e.target.closest && e.target.closest(".scale")) changed(); });
+
+  /* ---------- submit ---------- */
+  function live(){ var h = location.hostname; return /(^|\.)reneesolana\.com$/.test(h) || /github\.io$/.test(h); }
+  function finish(){
+    sent = true; clearTimeout(t);
+    if (ls) { try { ls.removeItem(KEY); } catch (e) {} }
+    form.hidden = true; document.getElementById("intro").hidden = true;
+    document.getElementById("done").hidden = false; prog.textContent = "Sent";
+    window.scrollTo(0, 0);
+  }
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var name = form.elements.name, email = form.elements.email;
+    if (!name.value.trim() || !email.value.trim() || !email.checkValidity()) {
+      note.textContent = "Please add your name and a valid email in Q01 so I can reach you.";
+      (name.value.trim() ? email : name).focus();
+      return;
+    }
+    var payload = {
+      submissionId: state.id,
+      submittedAt: new Date().toISOString(),
+      elapsedMs: state.startedAt ? Date.now() - state.startedAt : 0,
+      page: location.href.split("#")[0],
+      hp: form.elements.website_url.value,
+      items: collect()
+    };
+    if (payload.hp) { finish(); return; }
+    if (!INTAKE_ENDPOINT || !live()) {
+      note.textContent = "This preview can’t send answers yet. It sends once the intake is connected on your live site.";
+      try { console.log("Intake payload", payload); window.__lastIntakePayload = payload; } catch (x) {}
+      return;
+    }
+    send.disabled = true; send.textContent = "Sending…"; note.textContent = "";
+    fetch(INTAKE_ENDPOINT, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload) })
+      .then(function(r){ return r.json(); })
+      .then(function(res){ if (res && res.ok) finish(); else throw new Error((res && res.error) || "Not sent"); })
+      .catch(function(){
+        send.disabled = false; send.textContent = "Send my answers →";
+        note.textContent = "Something went wrong sending your answers. They’re still saved on this device. Please try again, or email reneesolanadesign@gmail.com.";
+      });
+  });
+
+  restore(); changed(false);
+  var m = document.getElementById("mast");
+  function sc(){ m.classList.toggle("scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", sc, { passive: true }); sc();
+})();
+</script>
+</body></html>
