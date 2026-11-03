@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /concepts/
+
+Sitemap: https://reneesolana.com/sitemap.xml
